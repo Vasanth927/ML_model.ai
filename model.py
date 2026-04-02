@@ -97,8 +97,8 @@ if file:
                 
                 results.append({'Model Name': name,
                                 'Accuracy': round(accuracy_score(ytest, ypred),3),
-                                'Precision': round(precision_score(ytest, ypred),3),
-                                'Recall': round(recall_score(ytest, ypred),3),
+                                'Precision': round(precision_score(ytest, ypred, average='weighted'),3),
+                                'Recall': round(recall_score(ytest, ypred, average='weighted'),3),
                                 'F1 Score': round(f1_score(ytest, ypred, average='weighted'),3)})
         
         results_df = pd.DataFrame(results)
